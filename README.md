@@ -27,8 +27,8 @@ See:
 
 # Installation
 
-After you've cloned this repo modify the file include/config.inc.php
-Once this file has valid $db_rw_user, $db_rw_pass, $db_host and
-$db_name variables configured you should be able to run scripts/create_db.php
-Point your php5-enabled web server at the base directory.
-Add scripts/scheduled.php as a daily cron job.
+- After you've cloned this repo modify the file include/config.inc.php
+- Once this file has valid $db_rw_user, $db_rw_pass, $db_host and
+- $db_name variables configured you should be able to run scripts/create_db.php
+- Point your php5-enabled web server at the base directory.
+- Add scripts/scheduled.php as a daily cron job.
