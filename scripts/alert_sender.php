@@ -5,7 +5,7 @@
 * DESCRIPTION: This script checkers for phones moves and
 *              sends out alert if found.
 * AUTHOR:      Patrick K. Ryon (Slashdoom)
-* LICENSE:     BSD 3
+* LICENSE:     BSD 3-clause (see LICENSE file)
 ************************************************************/
 
   $root = realpath($_SERVER["DOCUMENT_ROOT"]);
