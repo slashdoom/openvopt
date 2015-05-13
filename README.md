@@ -17,13 +17,13 @@ systems.  These are included for convienance only and not subject to the
 license and copywrite of this project but to those of their respective owners.
 
 See:
-http://getbootstrap.com \\
-http://jquery.com \\
+* http://getbootstrap.com
+* http://jquery.com
 
 # Requires
-php5 (mostly statndard but does need MySQL and LDAP modules). \\
-Web server such as Apache2 or NGINX. \\
-MySQL/MariaDB. \\
+* php5 (mostly statndard but does need MySQL and LDAP modules). 
+* Web server such as Apache2 or NGINX. 
+* MySQL/MariaDB. 
 
 # Installation
 
