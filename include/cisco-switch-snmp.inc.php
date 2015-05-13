@@ -4,8 +4,8 @@
 * FILENAME:    cisco-switch-snmp.inc.php
 * DESCRIPTION: class for getting Cisco VoIP phone info from
 *              the CDP tables of Cisco switches with SNMP.
-* AUTHOR:
-* LICENSE:
+* AUTHOR:      Patrick K. Ryon (Slashdoom)
+* LICENSE:     BSD 3-clause (see LICENSE file)
 ************************************************************/
 
   include("snmp-fix.inc.php");
