@@ -3,9 +3,9 @@
 /************************************************************
 * FILENAME:    clear_phones_table.php
 * DESCRIPTION: This script clears the OpenVoTP phones
-               table.
-* AUTHOR:
-* LICENSE:
+*              table.
+* AUTHOR:      Patrick K. Ryon (Slashdoom)
+* LICENSE:     BSD 3-clause (see LICENSE file)
 ************************************************************/
 
   // Get program and DB options
