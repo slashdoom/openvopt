@@ -1,5 +1,14 @@
 <?php
 
+/************************************************************
+* FILENAME:    ldap-auth.inc.php
+* DESCRIPTION: This script contains the function to
+*              authenticate ldap users and establish a web
+*              session.
+* AUTHOR:      Patrick K. Ryon (Slashdoom)
+* LICENSE:     BSD 3-clause (see LICENSE file)
+************************************************************/
+
 function ldap_user_auth($login_user, $login_pass, $ldap_fqdn, $ldap_port, $ldap_search_base, $ldap_rw_group, $ldap_ro_group, $ldap_search_user, $ldap_search_pass) {
 
   // initialize session
