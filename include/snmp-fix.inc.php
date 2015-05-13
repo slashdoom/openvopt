@@ -1,5 +1,16 @@
 <?php
 
+/************************************************************
+* FILENAME:    smtp-mail.inc.php
+* DESCRIPTION: This script contains functions to call snmpget
+*              snmpgetnext and snmpwalk and return their
+*              results.  I wish I could just use the built-in
+*              PHP SNMP libraries but they unfortunately seem
+*              buggy.
+* AUTHOR:      Patrick K. Ryon (Slashdoom)
+* LICENSE:     BSD 3-clause (see LICENSE file)
+************************************************************/
+
 function snmpget_fix($version,$host,$community,$sec_name,$sec_level,$auth_prot,$auth_pass,$priv_prot,$priv_pass,$oid,$timeout,$retries) {
 
   $cli="snmpget -O aqv";
