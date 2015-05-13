@@ -13,7 +13,7 @@ Project licensed under the BSD 3-clause license.  See LICENSE file for more
 information.
 
 This repository contains Bootstrap 3 and jQuery for webpage styling and menu
-systems.  These are included for convienance only and not subject to the
+systems.  These are included for convenience only and not subject to the
 license and copywrite of this project but to those of their respective owners.
 
 See:
