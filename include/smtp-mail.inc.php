@@ -1,5 +1,13 @@
 <?php
 
+/************************************************************
+* FILENAME:    smtp-mail.inc.php
+* DESCRIPTION: This script contains a simple class to send
+*              SMTP e-mails for alerts.
+* AUTHOR:      Patrick K. Ryon (Slashdoom)
+* LICENSE:     BSD 3-clause (see LICENSE file)
+************************************************************/
+
 class smtpmail {
 
   function smtpconfig($smtpserver,$smtpport,$smtpuser,$smtppass,$from,$to,$subject,$body) {
