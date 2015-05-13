@@ -21,9 +21,9 @@ http://getbootstrap.com
 http://jquery.com
 
 # Requires
-php5
+php5 (mostly statndard but does need MySQL and LDAP modules).
 Web server such as Apache2 or NGINX.
-MySQL/MariaDB
+MySQL/MariaDB.
 
 # Installation
 
