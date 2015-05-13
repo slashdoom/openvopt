@@ -25,7 +25,7 @@
 
   <head>
 
-    <title>OpenVoPT: Phones > Phone in Call Manager</title>
+    <title>OpenVoPT: Phones > Phones in Call Manager</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <script src="js/jquery-2.1.4.min.js"></script>
