@@ -2,9 +2,9 @@
 
 /************************************************************
 * FILENAME:    create_db.php
-* DESCRIPTION: This script creates the OpenENOO DB.
-* AUTHOR:
-* LICENSE:
+* DESCRIPTION: This script creates the OpenVoPT DB.
+* AUTHOR:      Patrick K. Ryon (Slashdoom)
+* LICENSE:     BSD 3-clause (see LICENSE file)
 ************************************************************/
 
   // Get program and DB options
@@ -13,7 +13,7 @@
   include($root."/include/config.inc.php");
 
   // Connect to SQL server
-  $db_conn = mysqli_connect($db_host, $db_user, $db_pass);
+  $db_conn = mysqli_connect($db_host, $db_rw_user, $db_rw_pass);
 
   // Check SQL connection
   if (mysqli_connect_errno())
