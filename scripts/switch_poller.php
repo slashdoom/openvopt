@@ -4,8 +4,8 @@
 * FILENAME:    switch-poller.php
 * DESCRIPTION: This script polls switches for Cisco VoIP
 *              phones.
-* AUTHOR:
-* LICENSE:
+* AUTHOR:      Patrick K. Ryon (Slashdoom)
+* LICENSE:     BSD 3-clause (see LICENSE file)
 ************************************************************/
 
   $root = realpath($_SERVER["DOCUMENT_ROOT"]);
