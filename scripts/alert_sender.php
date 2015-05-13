@@ -4,8 +4,8 @@
 * FILENAME:    alert-sender.php
 * DESCRIPTION: This script checkers for phones moves and
 *              sends out alert if found.
-* AUTHOR:
-* LICENSE:
+* AUTHOR:      Patrick K. Ryon (Slashdoom)
+* LICENSE:     BSD 3
 ************************************************************/
 
   $root = realpath($_SERVER["DOCUMENT_ROOT"]);
