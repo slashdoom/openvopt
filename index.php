@@ -24,7 +24,7 @@
 <html lang="en">
 
   <head>
-    <title>OpenVoPT: Settings > Call Managers</title>
+    <title>OpenVoPT: Summary</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <script src="js/jquery-2.1.4.min.js"></script>
