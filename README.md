@@ -21,7 +21,7 @@ See:
 * http://jquery.com
 
 # Requires
-* php5 (mostly statndard but does need MySQL and LDAP modules). 
+* php5 (mostly standard but does need MySQL and LDAP modules). 
 * Web server such as Apache2 or NGINX. 
 * MySQL/MariaDB. 
 
