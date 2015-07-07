@@ -1,7 +1,7 @@
 <?php
 
 /************************************************************
-* FILENAME:    smtp-mail.inc.php
+* FILENAME:    snmp-fix.inc.php
 * DESCRIPTION: This script contains functions to call snmpget
 *              snmpgetnext and snmpwalk and return their
 *              results.  I wish I could just use the built-in
