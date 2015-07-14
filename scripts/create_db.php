@@ -48,7 +48,8 @@
       $create_table_hosts .= "snmp_auth_prot VARCHAR( 3 ) , ";
       $create_table_hosts .= "snmp_auth_pass VARCHAR( 50 ) , ";
       $create_table_hosts .= "snmp_priv_prot VARCHAR( 3 ) , ";
-      $create_table_hosts .= "snmp_priv_pass VARCHAR( 50 ) ";
+      $create_table_hosts .= "snmp_priv_pass VARCHAR( 50 ) , ";
+      $create_table_hosts .= "status TINYINT( 1 ) ";
       $create_table_hosts .= ")";
 
       // Execute create hosts table SQL query and check results
