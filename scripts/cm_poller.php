@@ -40,6 +40,10 @@
           // process only if cm runs Cisco UCOS
           if ($host->isUCOS()) {
 
+            // set status as successful for cm
+            $update_status="UPDATE hosts SET status='1' WHERE host='".$switch['host']."'";
+            mysqli_query($db_conn,$update_status);
+
             // process phones list from cm
             foreach($host->getCMCiscoPhones() as $phone) {
 
@@ -49,6 +53,11 @@
 
             }
 
+          }
+          else {
+            // set status as unsuccessful for cm
+            $update_status="UPDATE hosts SET status='0' WHERE host='".$switch['host']."'";
+            mysqli_query($db_conn,$update_status);
           }
 
         }
