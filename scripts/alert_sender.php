@@ -24,7 +24,7 @@
   else {
 
     // Build SQL query for tracking phone list
-    $phonelist_sql="SELECT DISTINCT phone FROM tracking";
+    $phonelist_sql="SELECT DISTINCT phone FROM tracking WHERE datetime >= ( CURDATE() - INTERVAL 1 DAY )";
     $phonelist=mysqli_query($db_conn,$phonelist_sql);
 
     $mailsubj = 'Phone Tracking Report';
