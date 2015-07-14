@@ -37,6 +37,10 @@
         // process only if switch is Cisco
         if ($host->isCisco()) {
 
+          // set status as successful for switch
+          $update_status="UPDATE hosts SET status='1' WHERE host='".$phone["switch"]."'";
+          mysqli_query($db_conn,$update_status);
+
           // process phones list from switch
           foreach($host->getCDPCiscoPhones() as $phone) {
 
@@ -45,10 +49,6 @@
             mysqli_query($db_conn,$insert_tracking);
 
           }
-
-          // set status as successful for switch
-          $update_status="UPDATE hosts SET status='1' WHERE host='".$phone["switch"]."'";
-          mysqli_query($db_conn,$update_status);
 
         }
         else {
