@@ -38,7 +38,7 @@
         if ($host->isCisco()) {
 
           // set status as successful for switch
-          $update_status="UPDATE hosts SET status='1' WHERE host='".$phone["switch"]."'";
+          $update_status="UPDATE hosts SET status='1' WHERE host='".$switch['host']."'";
           mysqli_query($db_conn,$update_status);
 
           // process phones list from switch
@@ -53,7 +53,7 @@
         }
         else {
           // set status as unsuccessful for switch
-          $update_status="UPDATE hosts SET status='0' WHERE host='".$phone["switch"]."'";
+          $update_status="UPDATE hosts SET status='0' WHERE host='".$switch['host']."'";
           mysqli_query($db_conn,$update_status);
         }
 
