@@ -47,13 +47,13 @@
           }
 
           // set status as successful for switch
-          $update_status="UPDATE hosts SET status='1' WHERE host='".$host."')";
+          $update_status="UPDATE hosts SET status='1' WHERE host='".$phone["switch"]."')";
           mysqli_query($db_conn,$update_status);
 
         }
         else {
           // set status as unsuccessful for switch
-          $update_status="UPDATE hosts SET status='0' WHERE host='".$host."')";
+          $update_status="UPDATE hosts SET status='0' WHERE host='".$phone["switch"]."')";
           mysqli_query($db_conn,$update_status);
         }
 
