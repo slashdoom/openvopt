@@ -27,7 +27,7 @@ class smtpmail {
     $this->subject = $subject;
     $this->body = $body;
     if (strlen($attachment) > 0) { 
-      $this->attachment  = "--PHP-mixed-".$this->random_hash."\r\n".
+      $this->attachment  = "--PHP-mixed-".$this->random_hash."\r\n";
       $this->attachment .= $attachment."\n";
     }
     else { $this->attachment = ''; }
