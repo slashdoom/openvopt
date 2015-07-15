@@ -60,7 +60,7 @@
     $results=mysqli_query($db_conn,$devicestat_sql);
     // Build Device Status List
     while($row=mysqli_fetch_array($results)) {
-      if ($row['extension'] == '1') {
+      if ($row['status'] == '1') {
         echo '<tr class="success">'."\n";
         $status = 'Success';
       }
