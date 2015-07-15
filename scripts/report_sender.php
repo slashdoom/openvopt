@@ -35,7 +35,11 @@
 
     while($phone=mysqli_fetch_array($phonelist)) {
       //$report .=
-      echo $phone['phone'].",".$phone['switch_loc'].",".$phone['switch_int'].",".$phone['switch_int_alias']."\n";
+      $sphone            = preg_replace('~[\r\n]+~', '', $phone['phone']);
+      $sswitch_loc       = preg_replace('~[\r\n]+~', '', $phone['switch_loc']);
+      $sswitch_int       = preg_replace('~[\r\n]+~', '', $phone['switch_int']);
+      $sswitch_int_alias = preg_replace('~[\r\n]+~', '', $phone['switch_int_alias']);
+      echo $sphone.",".$sswitch_loc.",".$sswitch_int.",".$sswitch_int_alias."\n";
     }
 
     $mailbody = '';
