@@ -1,10 +1,17 @@
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="index.php">OpenVoPT</a>
+      <a class="navbar-brand" href="#">OpenVoPT</a>
     </div>
     <div>
       <ul class="nav navbar-nav">
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        Status<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="index.php">Overview</a></li>
+            <li><a href="d_stat.php">Device Polling Status</a></li>
+          </ul>
+        </li>
         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">
         Phones<span class="caret"></span></a>
           <ul class="dropdown-menu">
