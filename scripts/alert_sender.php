@@ -39,7 +39,7 @@
     $devicelist=mysqli_query($db_conn,$devicestat_sql);
     
     while($device=mysqli_fetch_array($devicelist)) {
-      $devicesdown .= $device."\t"
+      $devicesdown .= $device."\t";
     }
     
     while($phone=mysqli_fetch_array($phonelist)) {
