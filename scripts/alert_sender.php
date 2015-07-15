@@ -123,7 +123,7 @@
     // Send e-mail if new phones or moves were found
     if($changes) {
       $smtp = new smtpmail();
-      $smtp->smtpconfig($smtp_server,$smtp_port,$smtp_user,$smtp_pass,$smtp_from,$smtp_to,$mailsubj,$mailbody);
+      $smtp->smtpconfig($smtp_server,$smtp_port,$smtp_user,$smtp_pass,$smtp_from,$smtp_to,$mailsubj,$mailbody,'');
       $mail = $smtp->smtpsend();
     }
 
