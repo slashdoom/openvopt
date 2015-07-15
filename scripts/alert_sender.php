@@ -36,7 +36,7 @@
 
     // Build SQL query for down switches
     $devicelist_sql="SELECT host FROM hosts WHERE status='0'";
-    $devicelist=mysqli_query($db_conn,$devicestat_sql);
+    $devicelist=mysqli_query($db_conn,$devicelist_sql);
     
     while($device=mysqli_fetch_array($devicelist)) {
       $devicesdown .= $device."\t";
