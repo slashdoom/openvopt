@@ -81,8 +81,10 @@ class smtpmail {
       fputs($smtpconn,"To: <".$this->to.">\r\n".
                       "From: <".$this->from.">\r\n".
                       "Subject: ".$this->subject."\r\n".
+                      "MIME-Version: 1.0"."\r\n".
                       'Content-Type: multipart/mixed; boundary = "PHP-mixed-'.$this->random_hash.'"\r\n'.
-                      "Content-Type: text/plain;      charset = 'ISO-8859-1'"."\r\n".
+                      "PHP-mixed-".$this->random_hash."\r\n".
+                      "Content-Type: text/plain; charset = 'ISO-8859-1'"."\r\n".
                       "\r\n\r\n".$this->body.$this->attachment."\r\n.\r\n");
       $smtpret["mail"]=fgets($smtpconn,256);
 
