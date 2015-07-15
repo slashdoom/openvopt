@@ -31,7 +31,7 @@
     $phonelist=mysqli_query($db_conn,$phonelist_sql);
 
     $mailsubj = 'Phone Tracking Report';
-    $report = 'PHONE,SWITCH_LOCATION,SWITCH_INTERFACE,SWITCH_INTERFACE_ALIAS';
+    $report = 'PHONE,SWITCH_LOCATION,SWITCH_INTERFACE,SWITCH_INTERFACE_ALIAS'."\n";
 
     while($phone=mysqli_fetch_array($phonelist)) {
       // tirm SQL results
