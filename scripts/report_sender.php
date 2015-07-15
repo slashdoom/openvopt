@@ -48,14 +48,14 @@
     // Create e-mail body
     $mailbody .= "Attached is a report from OpenVoPT.  It shows the current (within the past 3 days) locations of all phones detected on switch ports.\r\n\r\n";
 
-    $attachment  = "Content-Type: text/csv;"."\r\n";
-    $attachment .= "Content-Transfer-Encoding: base64"."\r\n";
-    $attachment .= "Content-Disposition: attachment; filename=phone_report.csv"."\r\n\r\n";
-    $attachment .= rtrim(chunk_split(base64_encode($report)));
+    $mailattach  = "Content-Type: text/csv;"."\r\n";
+    $mailattach .= "Content-Transfer-Encoding: base64;"."\r\n";
+    $mailattach .= "Content-Disposition: attachment; filename=phone_report.csv;"."\r\n\r\n";
+    $mailattach .= rtrim(chunk_split(base64_encode($report)));
 
     // Send e-mail 
     $smtp = new smtpmail();
-    $smtp->smtpconfig($smtp_server,$smtp_port,$smtp_user,$smtp_pass,$smtp_from,$smtp_to,$mailsubj,$mailbody,$attachment);
+    $smtp->smtpconfig($smtp_server,$smtp_port,$smtp_user,$smtp_pass,$smtp_from,$smtp_to,$mailsubj,$mailbody,$mailattach);
     $mail = $smtp->smtpsend();
 
   }
