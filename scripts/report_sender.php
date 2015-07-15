@@ -31,26 +31,26 @@
     $phonelist=mysqli_query($db_conn,$phonelist_sql);
 
     $mailsubj = 'Phone Tracking Report';
-    $report = '';
+    $report = 'PHONE,SWITCH_LOCATION,SWITCH_INTERFACE,SWITCH_INTERFACE_ALIAS';
 
     while($phone=mysqli_fetch_array($phonelist)) {
-      //$report .=
+      // tirm SQL results
       $sphone            = preg_replace('~[\r\n]+~', '', $phone['phone']);
       $sswitch_loc       = preg_replace('~[\r\n]+~', '', $phone['switch_loc']);
       $sswitch_int       = preg_replace('~[\r\n]+~', '', $phone['switch_int']);
       $sswitch_int_alias = preg_replace('~[\r\n]+~', '', $phone['switch_int_alias']);
-      echo $sphone.",".$sswitch_loc.",".$sswitch_int.",".$sswitch_int_alias."\n";
+      // build report line
+      $report .= $sphone.",".$sswitch_loc.",".$sswitch_int.",".$sswitch_int_alias."\n";
     }
 
+    $random_hash = md5(date('r', time()));
     $mailbody = '';
 
-    // Enter new phone messages into e-mail body
-    //if(strlen($newphone) > 0) {
-    //  $mailbody .= "OpenVoPT has detected the following previously not found phones...\r\n\r\n";
-    //  $mailbody .= "***************************************************************************\n";
-    //  $mailbody .= $newphone;
-    //  $mailbody .= "\r\n\r\n";
-    //}
+    // Create e-mail body
+    $mailbody .= "Attached is a report from OpenVoPT.  It shows the current (within the past 3 days) locations of all phones detected on switch ports.\r\n\r\n";
+
+    $mailbody .= $newphone;
+    $mailbody .= "\r\n\r\n";
 
     // Enter moved phone messages into e-mail body
     //if(strlen($movedphone) > 0) {
