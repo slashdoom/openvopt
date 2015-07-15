@@ -43,7 +43,6 @@
       $report .= $sphone.",".$sswitch_loc.",".$sswitch_int.",".$sswitch_int_alias."\n";
     }
 
-    $random_hash = md5(date('r', time()));
     $mailbody = '';
 
     // Create e-mail body
