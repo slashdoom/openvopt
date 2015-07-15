@@ -51,7 +51,7 @@
     echo '<tr>'."\n";
     echo '<th>Device</th>'."\n";
     echo '<th>Type</th>'."\n";
-    echo '<th>Polling Status</th>'."\n";
+    echo '<th>Last Polling Status</th>'."\n";
     echo '</tr>'."\n";
     echo '</thead>'."\n";
     echo '<tbody>'."\n";
