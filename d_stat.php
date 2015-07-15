@@ -57,7 +57,7 @@
     echo '<tbody>'."\n";
         // Create SQL query
     $devicestat_sql="SELECT * FROM hosts ORDER BY host";
-    $results=mysqli_query($db_conn,$devicestat);
+    $results=mysqli_query($db_conn,$devicestat_sql);
     // Build Device Status List
     while($row=mysqli_fetch_array($results)) {
       if ($row['extension'] == 1) {
