@@ -31,11 +31,12 @@
     $phonelist=mysqli_query($db_conn,$phonelist_sql);
 
     $mailsubj = 'Phone Tracking Report';
-    $report = 'PHONE,SWITCH_LOCATION,SWITCH_INTERFACE,SWITCH_INTERFACE_ALIAS'."\n";
+    $report = '"PHONE","SWITCH","SWITCH LOCATION","SWITCH INTERFACE","SWITCH INTERFACE ALIAS"'."\n";
 
     while($phone=mysqli_fetch_array($phonelist)) {
-      // tirm SQL results
+      // trim SQL results
       $sphone            = '"'.preg_replace('~[\r\n]+~', '', $phone['phone']).'"';
+      $sswitch           = '"'.preg_replace('~[\r\n]+~', '', $phone['switch']).'"';
       $sswitch_loc       = '"'.preg_replace('~[\r\n]+~', '', $phone['switch_loc']).'"';
       $sswitch_int       = '"'.preg_replace('~[\r\n]+~', '', $phone['switch_int']).'"';
       $sswitch_int_alias = '"'.preg_replace('~[\r\n]+~', '', $phone['switch_int_alias']).'"';
