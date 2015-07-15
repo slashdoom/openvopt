@@ -30,9 +30,18 @@
     $mailsubj = 'Phone Tracking Report';
 
     $changes = false;
+    $devicesdown = '';
     $newphone = '';
     $movedphone = '';
 
+    // Build SQL query for down switches
+    $devicelist_sql="SELECT host FROM hosts WHERE status='0'";
+    $devicelist=mysqli_query($db_conn,$devicestat_sql);
+    
+    while($device=mysqli_fetch_array($devicelist)) {
+      $devicesdown .= $device."\t"
+    }
+    
     while($phone=mysqli_fetch_array($phonelist)) {
 
       // Build SQL query for phone history
@@ -99,6 +108,15 @@
       $mailbody .= "OpenVoPT has detected the following moved phones...\r\n\r\n";
       $mailbody .= "***************************************************************************\n";
       $mailbody .= $movedphone;
+      $mailbody .= "\r\n\r\n";
+    }
+
+    // Enter devices with status down into e-mail body
+    if(strlen($devicesdown) > 0) {
+      $mailbody .= "OpenVoPT was not able to poll the following devices...\r\n\r\n";
+      $mailbody .= "***************************************************************************\n";
+      $mailbody .= $devicesdown;
+      $mailbody .= "***************************************************************************\n";
       $mailbody .= "\r\n\r\n";
     }
 
