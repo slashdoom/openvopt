@@ -115,7 +115,7 @@
     if(strlen($devicesdown) > 0) {
       $mailbody .= "OpenVoPT was not able to poll the following devices...\r\n\r\n";
       $mailbody .= "***************************************************************************\n";
-      $mailbody .= $devicesdown;
+      $mailbody .= $devicesdown."\n";
       $mailbody .= "***************************************************************************\n";
       $mailbody .= "\r\n\r\n";
     }
