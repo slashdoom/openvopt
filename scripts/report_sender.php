@@ -35,10 +35,10 @@
 
     while($phone=mysqli_fetch_array($phonelist)) {
       // tirm SQL results
-      $sphone            = preg_replace('~[\r\n]+~', '', $phone['phone']);
-      $sswitch_loc       = preg_replace('~[\r\n]+~', '', $phone['switch_loc']);
-      $sswitch_int       = preg_replace('~[\r\n]+~', '', $phone['switch_int']);
-      $sswitch_int_alias = preg_replace('~[\r\n]+~', '', $phone['switch_int_alias']);
+      $sphone            = '"'.preg_replace('~[\r\n]+~', '', $phone['phone']).'"';
+      $sswitch_loc       = '"'.preg_replace('~[\r\n]+~', '', $phone['switch_loc']).'"';
+      $sswitch_int       = '"'.preg_replace('~[\r\n]+~', '', $phone['switch_int']).'"';
+      $sswitch_int_alias = '"'.preg_replace('~[\r\n]+~', '', $phone['switch_int_alias']).'"';
       // build report line
       $report .= $sphone.",".$sswitch_loc.",".$sswitch_int.",".$sswitch_int_alias."\n";
     }
