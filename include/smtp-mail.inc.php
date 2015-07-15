@@ -26,7 +26,10 @@ class smtpmail {
     $this->to = $to;
     $this->subject = $subject;
     $this->body = $body;
-    if (strlen($attachment) > 0) { $this->attachment .= $attachment."\n"; }
+    if (strlen($attachment) > 0) { 
+      $this->attachment  = "--PHP-mixed-".$this->random_hash."\r\n".
+      $this->attachment .= $attachment;
+    }
     else { $this->attachment = ''; }
 
   }
@@ -82,7 +85,6 @@ class smtpmail {
                       "--PHP-mixed-".$this->random_hash."\r\n".
                       "Content-Type: text/plain; charset = 'ISO-8859-1'"."\r\n".
                       "\r\n\r\n".$this->body."\r\n".
-                      "--PHP-mixed-".$this->random_hash."\r\n".
                       $this->attachment."\r\n".
                       "--PHP-mixed-".$this->random_hash."--\r\n"."\r\n.\r\n");
       $smtpret["mail"]=fgets($smtpconn,256);
