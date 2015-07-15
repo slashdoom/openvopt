@@ -35,7 +35,10 @@
 
     while($phone=mysqli_fetch_array($phonelist)) {
       //$report .=
-      echo $phone['phone'];
+      echo $phone['phone']."\n";
+      echo $phone['switch_loc']."\n";
+      echo $phone['switch_int']."\n";
+      echo $phone['switch_int_alias']."\n";
     }
 
     $mailbody = '';
