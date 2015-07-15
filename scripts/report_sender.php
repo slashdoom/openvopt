@@ -48,9 +48,9 @@
     // Create e-mail body
     $mailbody .= "Attached is a report from OpenVoPT.  It shows the current (within the past 3 days) locations of all phones detected on switch ports.\r\n\r\n";
 
-    $attachment  = "Content-Type: text/csv; name=phone_report.csv"."\n";
-    $attachment .= "Content-Transfer-Encoding: base64"."\n";
-    $attachment .= "Content-Disposition: attachment"."\n\n";
+    $attachment  = "Content-Type: text/csv;"."\r\n";
+    $attachment .= "Content-Transfer-Encoding: base64"."\r\n";
+    $attachment .= "Content-Disposition: attachment; filename=phone_report.csv"."\r\n\r\n";
     $attachment .= rtrim(chunk_split(base64_encode($report)));
 
     // Send e-mail 
