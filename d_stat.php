@@ -44,7 +44,7 @@
   }
   else {
     echo '<div class="container">'."\n";
-    echo '<h3>Phones currently in Call Managers:</h3>'."\n\n";
+    echo '<h3>Device Polling Status:</h3>'."\n\n";
     
     echo '<table class="table table-hover">'."\n";
     echo '<thead>'."\n";
