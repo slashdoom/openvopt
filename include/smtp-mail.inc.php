@@ -14,6 +14,7 @@ class smtpmail {
 
     // Define mail variables
     $this->smtpserver=$smtpserver;
+    $this->random_hash = md5(date('r', time()));
     if (strlen($smtpport) > 0) { $this->smtpport = 25; }
     else { $this->smtpport=$smtpport; }
     echo $smtpuser;
@@ -26,12 +27,11 @@ class smtpmail {
     $this->subject = $subject;
     $this->body = $body;
     if (strlen($attachment) > 0) { 
-      $this->attachment = "--PHP-mixed-$random_hash"."\n";
+      $this->attachment = "--PHP-mixed-".$this->random_hash."\n";
       $this->attachment .= $attachment."\n"; 
-      $this->attachment .= "--PHP-mixed-$random_hash";
+      $this->attachment .= "--PHP-mixed-".$this->random_hash."--";
     }
     else { $this->attachment = ''; }
-    $this->random_hash = md5(date('r', time()));
 
   }
 
