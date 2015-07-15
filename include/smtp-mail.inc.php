@@ -10,21 +10,28 @@
 
 class smtpmail {
 
-  function smtpconfig($smtpserver,$smtpport,$smtpuser,$smtppass,$from,$to,$subject,$body) {
+  function smtpconfig($smtpserver,$smtpport,$smtpuser,$smtppass,$from,$to,$subject,$body,$attachment) {
 
     // Define mail variables
     $this->smtpserver=$smtpserver;
-    if (strlen($smtpport) > 0) { $this->smtpport=25; }
+    if (strlen($smtpport) > 0) { $this->smtpport = 25; }
     else { $this->smtpport=$smtpport; }
     echo $smtpuser;
-    if (strlen($smtpuser) > 0) { $this->smtpuser=base64_encode($smtpuser); }
+    if (strlen($smtpuser) > 0) { $this->smtpuser = base64_encode($smtpuser); }
     else { $this->smtpuser = ''; }
-    if (strlen($smtppass) > 0) { $this->smtppass=base64_encode($smtppass); }
+    if (strlen($smtppass) > 0) { $this->smtppass = base64_encode($smtppass); }
     else { $this->smtppass = ''; }
-    $this->from=$from;
-    $this->to=$to;
-    $this->subject=$subject;
-    $this->body=$body;
+    $this->from = $from;
+    $this->to = $to;
+    $this->subject = $subject;
+    $this->body = $body;
+    if (strlen($attachment) > 0) { 
+      $this->attachment = "--PHP-mixed-$random_hash"."\n";
+      $this->attachment .= $attachment."\n"; 
+      $this->attachment .= "--PHP-mixed-$random_hash";
+    }
+    else { $this->attachment = ''; }
+    $this->random_hash = md5(date('r', time()));
 
   }
 
@@ -71,7 +78,12 @@ class smtpmail {
       $smtpret["data"]=fgets($smtpconn,1024);
 
       // Send message info
-      fputs($smtpconn,"To: <".$this->to.">\r\nFrom: <".$this->from.">\r\nSubject:".$this->subject."\r\n\r\n\r\n".$this->body."\r\n.\r\n");
+      fputs($smtpconn,"To: <".$this->to.">\r\n".
+                      "From: <".$this->from.">\r\n".
+                      "Subject: ".$this->subject."\r\n".
+                      'Content-Type: multipart/mixed; boundary = "PHP-mixed-'.$this->random_hash.'"\r\n'.
+                      "Content-Type: text/plain;      charset = 'ISO-8859-1'"."\r\n".
+                      "\r\n\r\n".$this->body.$this->attachment."\r\n.\r\n");
       $smtpret["mail"]=fgets($smtpconn,256);
 
       // Close connection
