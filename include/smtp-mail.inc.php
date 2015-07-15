@@ -83,7 +83,7 @@ class smtpmail {
                       "Subject: ".$this->subject."\r\n".
                       "MIME-Version: 1.0"."\r\n".
                       'Content-Type: multipart/mixed; boundary = "PHP-mixed-'.$this->random_hash.'"\r\n'.
-                      "PHP-mixed-".$this->random_hash."\r\n".
+                      "--PHP-mixed-".$this->random_hash."\r\n".
                       "Content-Type: text/plain; charset = 'ISO-8859-1'"."\r\n".
                       "\r\n\r\n".$this->body.
                       "--PHP-mixed-".$this->random_hash."--\r\n".
