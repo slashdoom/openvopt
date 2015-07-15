@@ -48,32 +48,15 @@
     // Create e-mail body
     $mailbody .= "Attached is a report from OpenVoPT.  It shows the current (within the past 3 days) locations of all phones detected on switch ports.\r\n\r\n";
 
-    $mailbody .= $newphone;
-    $mailbody .= "\r\n\r\n";
+    $attachment  = "Content-Type: text/csv; name=phone_report.csv"."\n"
+    $attachment .= "Content-Transfer-Encoding: base64"."\n"
+    $attachment .= "Content-Disposition: attachment"."\n\n"
+    $attachment .= rtrim(chunk_split(base64_encode($report)));
 
-    // Enter moved phone messages into e-mail body
-    //if(strlen($movedphone) > 0) {
-    //  $mailbody .= "OpenVoPT has detected the following moved phones...\r\n\r\n";
-    //  $mailbody .= "***************************************************************************\n";
-    //  $mailbody .= $movedphone;
-    //  $mailbody .= "\r\n\r\n";
-    //}
-
-    // Enter devices with status down into e-mail body
-    //if(strlen($devicesdown) > 0) {
-    //  $mailbody .= "OpenVoPT was not able to poll the following devices...\r\n\r\n";
-    //  $mailbody .= "***************************************************************************\n";
-    //  $mailbody .= $devicesdown."\n";
-    //  $mailbody .= "***************************************************************************\n";
-    //  $mailbody .= "\r\n\r\n";
-    //}
-
-    // Send e-mail if new phones or moves were found
-    //if($changes) {
-    //  $smtp = new smtpmail();
-    //  $smtp->smtpconfig($smtp_server,$smtp_port,$smtp_user,$smtp_pass,$smtp_from,$smtp_to,$mailsubj,$mailbody);
-    //  $mail = $smtp->smtpsend();
-    //}
+    // Send e-mail 
+    $smtp = new smtpmail();
+    $smtp->smtpconfig($smtp_server,$smtp_port,$smtp_user,$smtp_pass,$smtp_from,$smtp_to,$mailsubj,$mailbody,$attachment);
+    $mail = $smtp->smtpsend();
 
   }
 
