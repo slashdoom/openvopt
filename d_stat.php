@@ -76,7 +76,7 @@
       }
       echo '<td>'.$row['host'].'</td>'."\n";
       echo '<td>'.$type.'</td>'."\n";
-      echo '<td>'.$row['status']." ".$status.'</td>'."\n";
+      echo '<td>'.$status.'</td>'."\n";
       echo '</tr>'."\n";
     }
     echo '</tbody>'."\n";
