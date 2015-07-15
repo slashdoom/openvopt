@@ -86,7 +86,7 @@ class smtpmail {
                       "PHP-mixed-".$this->random_hash."\r\n".
                       "Content-Type: text/plain; charset = 'ISO-8859-1'"."\r\n".
                       "\r\n\r\n".$this->body.
-                      "PHP-mixed-".$this->random_hash."--\r\n".
+                      "--PHP-mixed-".$this->random_hash."--\r\n".
                       $this->attachment."\r\n.\r\n");
       $smtpret["mail"]=fgets($smtpconn,256);
 
