@@ -50,7 +50,7 @@
 
     $mailattach  = "Content-Type: text/csv;"."\r\n";
     $mailattach .= "Content-Transfer-Encoding: base64;"."\r\n";
-    $mailattach .= "Content-Disposition: attachment; filename=phone_report.csv;"."\r\n\r\n";
+    $mailattach .= 'Content-Disposition: attachment; filename="phone_report.csv";'."\r\n\r\n";
     $mailattach .= rtrim(chunk_split(base64_encode($report)));
 
     // Send e-mail 
