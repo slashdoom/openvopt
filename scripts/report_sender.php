@@ -24,7 +24,7 @@
   else {
 
     // Build SQL query for tracking phone list
-    $phonelist_sql="SELECT DISTINCT * 
+    $phonelist_sql="SELECT DISTINCT phone,switch_loc,switch_int,switch_int_alias
                     FROM tracking 
                     WHERE datetime >= ( CURDATE() - INTERVAL 3 DAY ) 
                     ORDER BY phone";
