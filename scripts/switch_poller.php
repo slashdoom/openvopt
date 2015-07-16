@@ -44,8 +44,19 @@
           // process phones list from switch
           foreach($host->getCDPCiscoPhones() as $phone) {
 
+            // trim SQL results
+            $sphone            = '"'.preg_replace('~[\r\n]+~', '', $phone['phone']).'"';
+            $sswitch           = '"'.preg_replace('~[\r\n]+~', '', $phone['switch']).'"';
+            $sswitch_loc       = '"'.preg_replace('~[\r\n]+~', '', $phone['switch_loc']).'"';
+            $sswitch_int       = '"'.preg_replace('~[\r\n]+~', '', $phone['switch_int']).'"';
+            $sswitch_int_alias = '"'.preg_replace('~[\r\n]+~', '', $phone['switch_int_alias']).'"';
             // insert phone info into tracking table
-            $insert_tracking="INSERT INTO tracking (phone,switch,switch_loc,switch_int,switch_int_alias) VALUES('".$phone["phone"]."','".$phone["switch"]."','".$phone["switch_loc"]."','".$phone["switch_int"]."','".$phone["switch_int_alias"]."')";
+            $insert_tracking="INSERT INTO tracking (phone,switch,switch_loc,switch_int,switch_int_alias) 
+                             VALUES('".$sphone."','"
+                                      .$sswitch."','"
+                                      .$sswitch_loc."','"
+                                      .$sswitch_int."','"
+                                      .$sswitch_int_alias."')";
             mysqli_query($db_conn,$insert_tracking);
 
           }
